@@ -31,7 +31,7 @@ if($_POST){
     $pdf -> AddPage('L');
     $pdf->SetTitle($title);
     // Arial bold 15
-    $pdf->SetFont('Arial','B',18);
+    $pdf->SetFont('Arial','B',14);
     // Calculate width of title and position
     $w = $pdf->GetStringWidth($title)+6;
     //$w ='50';
@@ -52,28 +52,28 @@ if($_POST){
     //$w = $pdf->GetStringWidth($job)+6;
     $pdf->SetX((170-$w)/3);
     //$pdf->Cell(50, 20, 'Name:', 1, 0, 'C');
-    $pdf->Cell(250, 40, '', 1, 1, 'C');
+    $pdf->Cell(250, 65, '', 1, 1, 'C');
     
     $pdf->SetX((170-$w)/3);
     //$pdf->Cell(50, 20, 'Name:', 1, 0, 'C');
     $pdf->Cell(250, 25, $group_name, 1, 1, 'C');
     
     // 3 collumns
-    $pdf->SetX((170-$w)/3);
-    $pdf->Cell(85, 25, $Sublocation, 1, 0, 'C');
-    $pdf->Cell(83, 25, $location, 1, 0, 'C');
-    $pdf->Cell(82, 25, $division, 1, 1, 'C');
+    $pdf->SetX((170-$w)/4);
+    $pdf->Cell(85, 24, $Sublocation, 1, 0, 'C');
+    $pdf->Cell(83, 24, $location, 1, 0, 'C');
+    $pdf->Cell(82, 24, $division, 1, 1, 'C');
 
 
     // 3 collumns
-    $pdf->SetX((170-$w)/3);
-    $pdf->Cell(85, 25, $subcounty, 1, 0, 'C');
-    $pdf->Cell(83, 25, $constituency, 1, 0, 'C');
-    $pdf->Cell(82, 25, $county, 1, 1, 'C');
+    $pdf->SetX((170-$w)/4);
+    $pdf->Cell(85, 10, $subcounty, 1, 0, 'C');
+    $pdf->Cell(83, 10, $constituency, 1, 0, 'C');
+    $pdf->Cell(82, 10, $county, 1, 1, 'C');
 
     $pdf->SetX((170-$w)/2);
-    $pdf->Cell(100, 30, 'Field:', 1, 0, 'L');
-    $pdf->Cell(100, 30, 'Field:', 1, 1, 'R');
+    $pdf->Cell(100, 20, 'RegNoHere:', 1, 0, 'C');
+    $pdf->Cell(100, 20, '', 1, 1, 'R');
     $pdf->Output();
 }
 ?>
